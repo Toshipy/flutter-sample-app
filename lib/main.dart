@@ -38,42 +38,33 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                showDialog(context: context, builder: (context) {
-                  return const AlertDialog(
-                    title: Text('ログインしました'),
-                  );
-                },);
-              },
-              child: const Text('ログインする'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                showDialog(context: context, builder: (context) {
-                  return const AlertDialog(
-                    title: Text('新規登録しました'),
-                  );
-                },);
-              },
-              child: const Text('新規登録する'),
-            ),
-            TextButton(
-              onPressed: () {
-                showDialog(context: context, builder: (context) {
-                  return const AlertDialog(
-                    title: Text('パスワードを忘れた方はこちら'),
-                  );
-                });
-              },
-              child: const Text('パスワードを忘れた方はこちら'),
-            )
-          ],
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('山田太郎'),
+            subtitle: Text('090-1234-5678'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('山田太郎'),
+            subtitle: Text('090-1234-5678'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('山田太郎'),
+            subtitle: Text('090-1234-5678'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+            },
+          )
+        ],
       ),
       );
   }
