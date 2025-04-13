@@ -31,22 +31,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  // void showRobotResult() {
-  //
-  //   List<String> hands = ['pa', 'choki', 'gu'];
-  //   hands.shuffle();
-  //   String hand = hands.first;
-  //
-  //   Image image = Image.asset('assets/janken_$hand.png');
-  //
-  //   showDialog(context: context, builder: (context) {
-  //     return AlertDialog(
-  //       title: Text('ロボット'),
-  //       content: image
-  //     );
-  //   },);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,14 +38,34 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // showRobotResult();
-          },
-          child: Text('じゃんけん')
-            ),
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('山田太郎'),
+            subtitle: Text('090-1234-5678'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('山田太郎'),
+            subtitle: Text('090-1234-5678'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.phone),
+            title: Text('山田太郎'),
+            subtitle: Text('090-1234-5678'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+            },
+          )
+        ],
+      ),
       );
   }
 }
