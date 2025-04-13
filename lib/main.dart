@@ -31,22 +31,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  // void showRobotResult() {
-  //
-  //   List<String> hands = ['pa', 'choki', 'gu'];
-  //   hands.shuffle();
-  //   String hand = hands.first;
-  //
-  //   Image image = Image.asset('assets/janken_$hand.png');
-  //
-  //   showDialog(context: context, builder: (context) {
-  //     return AlertDialog(
-  //       title: Text('ロボット'),
-  //       content: image
-  //     );
-  //   },);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,13 +39,42 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // showRobotResult();
-          },
-          child: Text('じゃんけん')
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                showDialog(context: context, builder: (context) {
+                  return const AlertDialog(
+                    title: Text('ログインしました'),
+                  );
+                },);
+              },
+              child: const Text('ログインする'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(context: context, builder: (context) {
+                  return const AlertDialog(
+                    title: Text('新規登録しました'),
+                  );
+                },);
+              },
+              child: const Text('新規登録する'),
+            ),
+            TextButton(
+              onPressed: () {
+                showDialog(context: context, builder: (context) {
+                  return const AlertDialog(
+                    title: Text('パスワードを忘れた方はこちら'),
+                  );
+                });
+              },
+              child: const Text('パスワードを忘れた方はこちら'),
+            )
+          ],
         ),
+      ),
       );
   }
 }
